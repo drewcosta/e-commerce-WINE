@@ -1,8 +1,9 @@
+'use client'
 import { ReactNode, createContext, useState } from 'react'
 import { PriorityPrices } from '@/types/priority-prices'
 import { FilterTypes } from '@/types/filter-types'
 
-const FilterContext = createContext({
+export const FilterContext = createContext({
   search: '',
   page: 0,
   type: FilterTypes.ALL,
@@ -17,7 +18,7 @@ interface ProviderProps{
   children: ReactNode
 }
 
-const FilterContextProvider = ({children}: ProviderProps) => {
+export const FilterContextProvider = ({children}: ProviderProps) => {
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(0)
   const [type, setType] = useState(FilterTypes.ALL)
@@ -40,4 +41,3 @@ const FilterContextProvider = ({children}: ProviderProps) => {
   )
 }
 
-export default FilterContextProvider

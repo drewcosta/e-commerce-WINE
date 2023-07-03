@@ -32,7 +32,7 @@ export const HeaderMobile = () => {
 }
 
 
-const HeaderMobileContainer = styled.div`
+const HeaderMobileContainer = styled.header`
   @media (max-width: 768px) {
     display: flex;
     justify-content: space-between;

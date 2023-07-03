@@ -1,6 +1,7 @@
 import { Header } from '@/components/Header'
 import './globals.css'
 import { Lato } from 'next/font/google'
+import { FilterContextProvider } from '@/contexts/FilterContext'
 
 const lato = Lato({
   weight: ['300', '400', '700'],
@@ -20,8 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={lato.className}>
-        <Header />
-        {children}</body>
+        <FilterContextProvider>
+          <Header />
+          {children}
+        </FilterContextProvider>    
+      </body>
     </html>
   )
 }
