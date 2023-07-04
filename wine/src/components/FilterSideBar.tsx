@@ -1,6 +1,6 @@
 import React from 'react'
 import { FilterByType } from './Filter-by-type'
-import { FilterByPriority } from './Filter-by-priority'
+import { FilterByPriorityPrices } from './Filter-by-priority-prices'
 import styled from 'styled-components'
 
 export const FilterSideBar = () => {
@@ -8,7 +8,7 @@ export const FilterSideBar = () => {
     <Container>
       <h1>Refine sua busca</h1>
       <FilterByType />
-      <FilterByPriority />
+      <FilterByPriorityPrices />
     </Container>
   )
 }
@@ -18,12 +18,14 @@ const Container = styled.aside`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
+  padding: 0 160px;
 
   h1{
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
     color: #000000;
+    margin-bottom: 30px;
   }
 `
 
