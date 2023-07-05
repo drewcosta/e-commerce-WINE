@@ -5,7 +5,7 @@ import { FilterTypes } from '@/types/filter-types'
 import { InputCheckbox } from './InputCheckbox'
 
 export const FilterByType = () => {
-  const filterValues = Object.keys(FilterTypes) as FilterTypes[];
+  const filterValues= Object.values(FilterTypes) as FilterTypes[];
 
   return (
     <ContainerFilterType>
@@ -25,11 +25,14 @@ const ContainerFilterType = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 1rem;
 
   h3{
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 1.2rem;
+    line-height: normal;
     color: #333333;
+    font-weight: 500;
+    text-transform: capitalize;
     margin-bottom: 1rem;
   }
 `
