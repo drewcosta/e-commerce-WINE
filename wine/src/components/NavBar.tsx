@@ -47,6 +47,11 @@ const NavItem = styled.li<Props>`
 
   border-bottom: ${props => props.selected ? '2px solid var(--light-tannat)' : ''};
 
+  &:hover{
+    color: var(--light-tannat);
+    border-bottom: 2px solid var(--light-tannat);
+  }
+
   @media (max-width: 1024px) {
     font-size: 16px;
   }
