@@ -157,10 +157,10 @@ const allProducts = new Array(TOTAL_PAGES).fill(1).reduce((acc) => {
   const products = baseProducts.map(product => ({
     ...product, 
     id: faker.datatype.uuid(),
-    price_in_cents: faker.datatype.number({
-      min: 2000,
-      max: 10000,
-    }),
+    // price_in_cents: faker.datatype.number({
+    //   min: 2000,
+    //   max: 10000,
+    // }),
     sales: faker.datatype.number(40),
     created_at: faker.date.past()
   })).sort(() => .5 - Math.random());

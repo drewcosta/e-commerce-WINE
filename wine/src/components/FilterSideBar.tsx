@@ -19,7 +19,7 @@ const Container = styled.aside`
   align-items: flex-start;
   justify-content: space-around;
   padding: 0 160px;
-
+  
   h1{
     font-weight: 700;
     font-size: 20px;

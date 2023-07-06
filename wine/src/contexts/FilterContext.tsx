@@ -6,8 +6,8 @@ import { FilterTypes } from '@/types/filter-types'
 export const FilterContext = createContext({
   search: '',
   page: 0,
-  type: FilterTypes.ALL,
-  priority: PriorityPrices['até R$40'],
+  type: '',
+  priority: '',
   setPriority: (value: PriorityPrices) => {},
   setSearch: (value: string) => {},
   setPage: (value: number) => {},
@@ -21,8 +21,8 @@ interface ProviderProps{
 export const FilterContextProvider = ({children}: ProviderProps) => {
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(0)
-  const [type, setType] = useState(FilterTypes.ALL)
-  const [priority, setPriority] = useState(PriorityPrices['até R$40'])
+  const [type, setType] = useState('')
+  const [priority, setPriority] = useState('')
 
   return (
     <FilterContext.Provider 

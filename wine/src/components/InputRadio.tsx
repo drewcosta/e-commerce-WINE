@@ -4,13 +4,15 @@ import { PriorityPrices } from '@/types/priority-prices'
 
 interface Props{
   label: PriorityPrices,
+  checked: boolean,
+  onChange: () => void,
 }
 
-export const InputRadio = ({ label }: Props) => {
+export const InputRadio = ({ label, checked, onChange }: Props) => {
   return (
     <DivInputRadio>
-      <Input type='radio' />
-      <p>{label}</p>
+      <Input type='radio' checked={checked} onChange={onChange} />
+      <label>{label}</label>
     </DivInputRadio>
   )
 }
@@ -23,7 +25,7 @@ const DivInputRadio = styled.div`
   margin-bottom: 1.12rem;
   cursor: pointer;
 
-  p{
+  label{
     color: #1D1D1B;
     text-transform: capitalize;
   }

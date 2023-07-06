@@ -7,6 +7,8 @@ import { InputCheckbox } from './InputCheckbox'
 export const FilterByType = () => {
   const filterValues= Object.values(FilterTypes) as FilterTypes[];
 
+  const { type, setType } = useFilter()
+
   return (
     <ContainerFilterType>
       <h3>Por Tipo</h3>
@@ -14,12 +16,13 @@ export const FilterByType = () => {
         <InputCheckbox 
           key={filter}
           label={filter}
+          checked={type === filter}
+          // onChange={() => setType(filter)}
         />
       ))}
     </ContainerFilterType>
   )
 }
-
 
 const ContainerFilterType = styled.div`
   display: flex;

@@ -7,6 +7,8 @@ import { InputRadio } from './InputRadio'
 export const FilterByPriorityPrices = () => {
   const FilterValues = Object.values(PriorityPrices) as PriorityPrices[]
 
+  const { priority, setPriority} = useFilter()
+
   return (
     <ContainerFilterPrices>
       <h3>Por Preço</h3>
@@ -14,6 +16,8 @@ export const FilterByPriorityPrices = () => {
         <InputRadio 
           key={filter}
           label={filter}
+          checked={priority === filter}
+          onChange={() => setPriority(filter)}
         />
       ))}
     </ContainerFilterPrices>
