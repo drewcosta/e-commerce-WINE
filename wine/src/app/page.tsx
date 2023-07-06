@@ -1,15 +1,21 @@
 'use client'
-import Image from 'next/image'
+
 import styles from './page.module.css'
 import styled from 'styled-components'
 import { FilterSideBar } from '@/components/FilterSideBar'
+import { ProductsList } from '@/components/Products-list'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 export default function Home() {
+  const queryClient = new QueryClient({});
+
   return (
-    <Container>
-      <FilterSideBar />
-      {/* <Productlist /> */}
-    </Container>
+    <QueryClientProvider client={queryClient}>
+      <main className={styles.main}>
+        <FilterSideBar />
+        <ProductsList />
+      </main>
+    </QueryClientProvider>
   )
 }
 
