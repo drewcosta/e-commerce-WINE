@@ -8,6 +8,7 @@ interface ProductCardProps{
 }
 
 export const ProductCard = ({ name, image, price }: ProductCardProps) => {
+
   return (
     <Container>
       <Card>

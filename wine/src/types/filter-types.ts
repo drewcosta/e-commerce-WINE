@@ -1,6 +1,7 @@
 export enum FilterTypes {
-  TINTO = 'TINTO',
-  BRANCO = 'BRANCO',
-  ESPUMANTE = 'ESPUMANTE',
-  ROSE = 'ROSÉ',
+  ALL = 'todos',
+  TINTO = 'tinto',
+  BRANCO = 'branco',
+  ESPUMANTE = 'espumante',
+  ROSE = 'rose',
 }

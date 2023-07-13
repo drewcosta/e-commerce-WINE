@@ -5,4 +5,5 @@
   align-items: flex-start;
   padding: 0 160px;
   min-height: 100vh;
+  background: var(--app-background)
 }

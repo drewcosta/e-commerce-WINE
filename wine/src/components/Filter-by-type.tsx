@@ -5,19 +5,19 @@ import { FilterTypes } from '@/types/filter-types'
 import { InputCheckbox } from './InputCheckbox'
 
 export const FilterByType = () => {
-  const filterValues= Object.values(FilterTypes) as FilterTypes[];
+  const filterValuesTypes= Object.values(FilterTypes);
 
   const { type, setType } = useFilter()
 
   return (
     <ContainerFilterType>
       <h3>Por Tipo</h3>
-      {filterValues.map((filter) => (
+      {filterValuesTypes.map((filter) => (
         <InputCheckbox 
           key={filter}
           label={filter}
           checked={type === filter}
-          // onChange={() => setType(filter)}
+          onClick={() => setType(filter)}
         />
       ))}
     </ContainerFilterType>

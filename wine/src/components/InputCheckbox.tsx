@@ -5,13 +5,13 @@ import { FilterTypes } from '@/types/filter-types'
 interface Props{
   label: FilterTypes,
   checked: boolean,
-  onChange?: () => void,
+  onClick?: () => void,
 }
 
-export const InputCheckbox = ({ label, checked, onChange }: Props) => {
+export const InputCheckbox = ({ label, checked, onClick }: Props) => {
   return (
     <DivCheckbox>
-      <Input type='checkbox' checked={checked} onChange={onChange} />
+      <Input type='checkbox' checked={checked} onChange={onClick} />
       <label>{label}</label>
     </DivCheckbox>
   )
