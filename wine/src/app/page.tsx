@@ -12,8 +12,8 @@ export default function Home() {
   return (
     <QueryClientProvider client={queryClient}>
       <main className={styles.main}>
-        <FilterSideBar />
-        <ProductsList />
+        {/* <FilterSideBar /> */}
+        {/* <ProductsList /> */}
       </main>
     </QueryClientProvider>
   )

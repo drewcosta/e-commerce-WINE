@@ -5,24 +5,23 @@ import { SearchInput } from './SearchInput'
 import styled, { css } from 'styled-components'
 import Image from 'next/image';
 import logo from '../assets/logo.svg';
+import { AnimationSidebarResponsive } from './AnimationSidebarResponsive'
 
 
 export const HeaderMobile = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [sidebar, setSidebar] = useState(false)
 
-  const handleMenuToggle = () => {
-    setMenuOpen(!menuOpen);
-  };
+  const showSiderbar = () => setSidebar(!sidebar)
 
   return (
     <HeaderMobileContainer>
-      <MenuIcon isOpen={menuOpen} onClick={handleMenuToggle}>{menuOpen ? 'X' : '☰'}</MenuIcon>
+      <MenuIcon onClick={showSiderbar}>☰</MenuIcon>
       <Logo src={logo} alt="" />
-
-      <MenuMobile open={menuOpen}>
-        <MenuIcon isOpen={menuOpen} onClick={handleMenuToggle}>{menuOpen ? 'X' : '☰'}</MenuIcon>
-        <NavBar />
-      </MenuMobile>
+      {sidebar && 
+        <AnimationSidebarResponsive>
+          <NavBar />
+        </AnimationSidebarResponsive>
+      }
       <div>
         <SearchInput />
         <Cart />
@@ -30,7 +29,6 @@ export const HeaderMobile = () => {
     </HeaderMobileContainer>
   )
 }
-
 
 const HeaderMobileContainer = styled.header`
   @media (max-width: 768px) {
@@ -54,39 +52,11 @@ const Logo = styled(Image)`
   }
 `;
 
-const MenuIcon = styled.div<{ isOpen: boolean }>`
+const MenuIcon = styled.div`
   cursor: pointer;
   font-size: 24px;
-  transition: all 2s ease-in-out;
-
-  @media (max-width: 768px) {
-    display: block;
-
-    ${({ isOpen }) => isOpen && css`
-      position: absolute;
-      top: 45px;
-      left: 20px;
-      color: #fff;
-    `}
-  }
-`;
-
-const MenuMobile = styled.div<{ open: boolean }>`
-    transition: width 0.5s ease-in-out;
   
   @media (max-width: 768px) {
-    display: ${({ open }) => (open ? 'flex' : 'none')};
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
-    width: ${({ open }) => (open ? '100%' : '0')};
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 1);
-    z-index: 10;
+    display: block;
   }
 `;
