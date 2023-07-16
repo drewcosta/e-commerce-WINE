@@ -8,7 +8,7 @@ export const FilterSideBar = () => {
     <Container>
       <h1>Refine sua busca</h1>
       <FilterByType />
-      <FilterByPriorityPrices />
+      {/* <FilterByPriorityPrices /> */}
     </Container>
   )
 }
@@ -18,7 +18,6 @@ const Container = styled.aside`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
-  padding: 0 160px;
   
   h1{
     font-weight: 700;

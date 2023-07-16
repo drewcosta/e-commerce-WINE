@@ -25,8 +25,7 @@ const HeaderDesktopContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 31px 160px;
+  padding: 31px 250px;
 
   border-bottom: 2px solid #CCCCCC;
   background: #FFFFFF;

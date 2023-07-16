@@ -7,7 +7,7 @@ export const FilterContext = createContext({
   search: '',
   page: 0,
   type: '',
-  priority: '',
+  priority: PriorityPrices.ATE_40,
   setPriority: (value: PriorityPrices) => {},
   setSearch: (value: string) => {},
   setPage: (value: number) => {},
@@ -22,7 +22,7 @@ export const FilterContextProvider = ({children}: ProviderProps) => {
   const [search, setSearch] = useState('')
   const [page, setPage] = useState(0)
   const [type, setType] = useState('')
-  const [priority, setPriority] = useState('')
+  const [priority, setPriority] = useState(PriorityPrices.ATE_40)
 
   return (
     <FilterContext.Provider 

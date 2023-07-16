@@ -53,9 +53,8 @@ const Card = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 10px;
   
-  width: 16rem;
+  width: 12rem;
   height: 20rem;
   
   background: #FFF;
@@ -67,6 +66,15 @@ const Card = styled.div`
     cursor: pointer; 
   }
 
+  h4{
+    height: 60px;
+    font-size: 1rem;
+    
+    @media (max-width: 768px) {
+      font-size: 0.87rem;
+    }
+  }
+
   p{
     color: #B6116E;
     font-weight: 700;
@@ -76,8 +84,16 @@ const Card = styled.div`
       color: #1D1D1B;
       text-transform: uppercase;
       margin-right: 5px;
-      font-size: 0.68rem;
+      font-size: 0.6875rem;
+
+      @media (max-width: 768px) {
+        font-size: 0.6275rem;
+      }
     }
+  }
+
+  @media (max-width: 424px) {
+    width: 9rem;
   }
 `
 

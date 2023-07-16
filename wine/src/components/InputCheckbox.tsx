@@ -11,7 +11,7 @@ interface Props{
 export const InputCheckbox = ({ label, checked, onClick }: Props) => {
   return (
     <DivCheckbox>
-      <Input type='checkbox' checked={checked} onChange={onClick} />
+      <Input type='checkbox' checked={checked} onClick={onClick} />
       <label>{label}</label>
     </DivCheckbox>
   )

@@ -5,7 +5,7 @@ import { FilterTypes } from '@/types/filter-types'
 import { InputCheckbox } from './InputCheckbox'
 
 export const FilterByType = () => {
-  const filterValuesTypes= Object.values(FilterTypes);
+  const filterValuesTypes = Object.values(FilterTypes);
 
   const { type, setType } = useFilter()
 
