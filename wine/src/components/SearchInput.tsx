@@ -1,34 +1,46 @@
-import Image from 'next/image'
-import React from 'react'
+import React, { InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
-import lupa from '../assets/lupa-icon.svg'
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  value: string,
+  handleChange: (value: string ) => void
+}
 
-export const SearchInput = () => {
+export const SearchInput = (props: InputProps) => {
   return (
-    <InputContainer>
-      <InputSearch src={lupa} alt='' />
-    </InputContainer>
+    <Container>
+      <Input 
+        placeholder='Pesquisar'
+        // @ts-ignore
+        onChange={(event) => props.handleChange(event.target.value)} 
+        {...props}
+      />
+    </Container>
   )
 }
 
-const InputContainer = styled.div`
+const Container = styled.div`
+  position: absolute;
+  top: 110px;
+  left: 0;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  width: 50px;
-  height: 50px;
+  width: 100%;
+  height: 60px;
+  margin: auto;
 
-  border-radius: 50%;
-  border: 2px solid var(--gray-default);
-
-  @media (max-width: 768px) {
-    border: none;
-  }
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 20px 0 rgba(0,0,0,.15);
+  z-index: 11;
 `
-const InputSearch = styled(Image)`
-  cursor: pointer;
-  padding: 5px;
+const Input = styled.input`
+  width: 74%;
+  padding: 15px;
+  background-color: #fff;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-size: 18px;
 `
-

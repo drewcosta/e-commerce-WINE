@@ -13,7 +13,7 @@ export default function Home() {
     <QueryClientProvider client={queryClient}>
       <main className={styles.main}>
         {/* <FilterSideBar /> */}
-        {/* <ProductsList /> */}
+        <ProductsList />
       </main>
     </QueryClientProvider>
   )

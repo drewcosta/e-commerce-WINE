@@ -38,7 +38,7 @@ const NavItem = styled.li<Props>`
 
   font-family: inherit;
   font-size: 18px;
-  font-weight: ${props => props.selected ? '600' : '400'};
+  font-weight: ${props => props.selected ? '700' : '400'};
 
   list-style: none;
   line-height: 24px;
@@ -54,5 +54,10 @@ const NavItem = styled.li<Props>`
 
   @media (max-width: 1024px) {
     font-size: 16px;
+  }
+  @media (max-width: 768px) {
+    color: var(--light-tannat);
+    font-weight: bold !important;
+    border-bottom: none !important;
   }
 `

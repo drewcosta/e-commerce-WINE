@@ -13,15 +13,15 @@ export const AnimationSidebarResponsive = ({ children }: Props) => {
     setActive(false)
   }
   
-    
-
   return (
-    <Container sidebar={active}>
-      <Close onClick={closeSidebar}>X</Close>  
-      <Content>
-        {children}
-      </Content>
-    </Container>
+    <Shadow sidebar={active}>
+      <Container sidebar={active}>
+        <Close onClick={closeSidebar}>X</Close>  
+        <Content>
+            {children}
+        </Content>
+      </Container>
+    </Shadow>
   )
 }
 
@@ -30,14 +30,14 @@ interface SidebarProps {
 }
 
 const Container = styled.div<SidebarProps>`
-  background-color: #171923;
+  background-color: #fff;
   position: fixed;
   height: 100%;
   top: 0px;
   left: 0px;
   width: 300px;
   left: ${props => props.sidebar ? '0' : '-100%'};
-  animation: showSidebar .4s;
+  animation: showSidebar .4s ease-out; 
 
   @keyframes showSidebar {
     from {
@@ -49,10 +49,14 @@ const Container = styled.div<SidebarProps>`
       width: 300px;
     }
   }
+
+  @media (max-width: 320px){
+    width: 320px;
+  }
 `
 const Close = styled.div`
   position: fixed;
-  color: white;
+  color: black;
   width: 30px;
   height: 30px;
   margin-top: 48px;
@@ -61,5 +65,18 @@ const Close = styled.div`
 `
 const Content = styled.div`
   margin-top: 100px;
+`
+
+const Shadow = styled.div<SidebarProps>`
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    display: ${props => props.sidebar ? 'block' : 'none'};
+    height: 100vh;
+    width: 100vw;
+
+    background-color: rgba(0, 0, 0, 0.32);
+    z-index: 10;   
 `
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Cart } from './Cart'
 import { NavBar } from './NavBar'
-import { SearchInput } from './SearchInput'
+import { Search } from './Search'
 import styled, { css } from 'styled-components'
 import Image from 'next/image';
 import logo from '../assets/logo.svg';
@@ -23,7 +23,7 @@ export const HeaderMobile = () => {
         </AnimationSidebarResponsive>
       }
       <div>
-        <SearchInput />
+        <Search />
         <Cart />
       </div>
     </HeaderMobileContainer>

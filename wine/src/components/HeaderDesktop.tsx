@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components';
 import { Cart } from './Cart';
 import { NavBar } from './NavBar';
-import { SearchInput } from './SearchInput';
+import { Search } from './Search';
 import { UserAccount } from './UserAccount';
 import Image from 'next/image';
 import logo from '../assets/logo.svg';
@@ -13,7 +13,7 @@ export const HeaderDesktop = () => {
       <Logo src={logo} alt="" />
       <NavBar />
       <div>
-        <SearchInput />
+        <Search />
         <UserAccount />
         <Cart />
       </div>

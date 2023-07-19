@@ -9,6 +9,10 @@ export const ProductsList = () => {
   const { data } = useProducts()
   console.log(data)
 
+  const handle= () => {
+    setValue(value + 9)
+  }
+
   return (
     <ContainerList>
       {data?.map((product, index) => index < value && (
@@ -19,7 +23,11 @@ export const ProductsList = () => {
           price={product.price_in_cents}
         />
       ))}
+      {/* {value < data!.length &&
+      <button onClick={handle}>aloalo</button>
+      } */}
     </ContainerList>
+    
   )
 }
 
