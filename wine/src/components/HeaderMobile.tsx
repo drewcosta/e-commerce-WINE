@@ -31,7 +31,7 @@ export const HeaderMobile = () => {
 }
 
 const HeaderMobileContainer = styled.header`
-  @media (max-width: 768px) {
+  @media (max-width: ${props => props.theme.desktopBreakpoint}) {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,7 +56,7 @@ const MenuIcon = styled.div`
   cursor: pointer;
   font-size: 24px;
   
-  @media (max-width: 768px) {
+  @media (max-width: ${props => props.theme.desktopBreakpoint}) {
     display: block;
   }
 `;

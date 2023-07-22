@@ -6,12 +6,12 @@ import { useLocalStorage } from '@/hooks/useLocalStorage'
 
 
 export const Cart = () => {
-  const { value } = useLocalStorage('cart-items');
+  const { value } = useLocalStorage('cart-items', []);
 
   return (
     <CartContainer>
       <CartIcon src={cartIcon} alt=''  height={48}/>
-      {value.length && <CartCount>{value.length}</CartCount>}
+      {value.length > 0 && <CartCount>{value.length}</CartCount>}
     </CartContainer>
   )
 }

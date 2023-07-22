@@ -48,8 +48,4 @@ const HeaderDesktopContainer = styled.header`
 
 const Logo = styled(Image)`
   cursor: pointer;
-
-  @media (max-width: 425px) {
-    height: 26px;
-  }
 `;
