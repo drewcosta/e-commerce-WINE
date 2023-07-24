@@ -1,13 +1,24 @@
 'use client'
-import styles from './page.module.css'
+import { DefaultPageLayout } from '@/components/DefaultPageLayout'
+import { DefaultProviders } from '@/components/DefaultProviders'
 import { FilterSideBar } from '@/components/FilterSideBar'
 import { ProductsList } from '@/components/Products-list'
+import styled from 'styled-components'
 
 export default function Home() {
   return (
-      <main className={styles.main}>
+    <DefaultPageLayout>
+      <Main>
         <FilterSideBar />
         <ProductsList />
-      </main>
+      </Main>
+    </DefaultPageLayout>
   )
 }
+
+const Main = styled.main`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+`;

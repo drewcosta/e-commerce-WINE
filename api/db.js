@@ -119,14 +119,14 @@ const baseProducts = [
     name: 'Altos Del Condor Rosé 2022', 
     description: 'Vinho jovem, leve, frutado, com boa acidez e agradável frescor', 
     image_url: 'https://www.wine.com.br/cdn-cgi/image/f=png,h=238,q=99/assets-images/produtos/28482-01.png', 
-    category: 'rose', 
+    category: 'rosé', 
     price_in_cents: 32.82
   },
   {
     name: 'Electum Tempranillo Rosé 2021', 
     description: 'Vinho jovem, leve, frutado, suculento, acidez média para alta, agradável frescor', 
     image_url: 'https://www.wine.com.br/cdn-cgi/image/f=png,h=238,q=99/assets-images/produtos/28611-01.png', 
-    category: 'rose', 
+    category: 'rosé', 
     price_in_cents: 41.06
   },
   { 
@@ -134,21 +134,21 @@ const baseProducts = [
     'Navaldar D.O.Ca Rioja Rosado 2020', 
     description: 'Perfeito equilíbrio entre fruta e acidez, final delicado.', 
     image_url: 'https://www.wine.com.br/cdn-cgi/image/f=png,h=238,q=99/assets-images/produtos/26485-01.png', 
-    category: 'rose', 
+    category: 'rosé', 
     price_in_cents: 88.12
   },
   { 
     name: 'Sagrado D.O.C. Douro Rosé 2020', 
     description: 'Vinho jovem, corpo leve para médio, volumoso, frutado, acidez média, agradável frescor', 
     image_url: 'https://www.wine.com.br/cdn-cgi/image/f=png,h=238,q=99/assets-images/produtos/28954-01.png', 
-    category: 'rose', 
+    category: 'rosé', 
     price_in_cents: 141.06
   },
   { 
-    name: 'Rosé à La Rose A.O.C. Côtes de Provence Rosé 2020', 
+    name: 'Rosé à La Rosé A.O.C. Côtes de Provence Rosé 2020', 
     description: 'Um vinho jovem, leve, frutado com nuances florais, acidez média para alta que lhe proporciona excelente frescor', 
     image_url: 'https://www.wine.com.br/cdn-cgi/image/f=png,h=238,q=99/assets-images/produtos/26691-01.png', 
-    category: 'rose', 
+    category: 'rosé', 
     price_in_cents: 258.71
   }
 ]

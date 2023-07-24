@@ -29,6 +29,7 @@ const CartContainer = styled.div`
   height: 50px;
   
   cursor: pointer;  
+  
 `
 
 const CartCount = styled.span`
