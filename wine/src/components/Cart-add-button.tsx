@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 interface Props{
-  onClick: () => void
+  onClick?: () => void
 }
 
 export const CartAddButton = ({ onClick }: Props) => {

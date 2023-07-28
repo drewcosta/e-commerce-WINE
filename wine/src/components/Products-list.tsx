@@ -24,9 +24,6 @@ export const ProductsList = () => {
           id={product.id}
         />
       ))}
-      {/* {value < data!.length &&
-      <button onClick={handle}>aloalo</button>
-      } */}
     </ContainerList>
     
   )
@@ -39,4 +36,5 @@ const ContainerList = styled.div`
   align-items: center;
   gap: 10px;
   width: 52rem;
+  padding: 10px;
 `

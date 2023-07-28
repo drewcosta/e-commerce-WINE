@@ -24,7 +24,7 @@ export const ProductCard = ({ name, image, price, id }: ProductCardProps) => {
         <h4>{name}</h4>
         <p><strong>Sócio wine</strong>R${price}</p>
       </Card>
-      {/* <CartAddButton /> */}
+      <CartAddButton />
     </Container>
   )
 }

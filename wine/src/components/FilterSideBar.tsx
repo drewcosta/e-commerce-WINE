@@ -20,11 +20,17 @@ const Container = styled.aside`
   justify-content: space-around;
   
   h1{
+    color: #000;
+    font-family: inherit;
+    font-size: 1.25rem;
+    font-style: normal;
     font-weight: 700;
-    font-size: 20px;
-    line-height: 24px;
-    color: #000000;
+    line-height: 1.5rem;
     margin-bottom: 30px;
+    
+    /* @media (max-width: 768px){
+      text-align: center;
+    } */
   }
 `
 
