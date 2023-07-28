@@ -3,9 +3,13 @@ import { FilterByType } from './Filter-by-type'
 import { FilterByPriorityPrices } from './Filter-by-priority-prices'
 import styled from 'styled-components'
 
-export const FilterSideBar = () => {
+interface Props{
+  show?: string | boolean
+}
+
+export const FilterSideBar = ({ show }: Props) => {
   return (
-    <Container>
+    <Container show={show}>
       <h1>Refine sua busca</h1>
       <FilterByType />
       {/* <FilterByPriorityPrices /> */}
@@ -13,7 +17,7 @@ export const FilterSideBar = () => {
   )
 }
 
-const Container = styled.aside`
+const Container = styled.aside<Props>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -27,10 +31,17 @@ const Container = styled.aside`
     font-weight: 700;
     line-height: 1.5rem;
     margin-bottom: 30px;
-    
-    /* @media (max-width: 768px){
+
+    @media (max-width: 768px){
       text-align: center;
-    } */
+        width: inherit;
+    }
+  }
+
+  @media (max-width: 768px){
+    display: ${props => (props.show ? 'flex' : 'none')};
+    width: 100%;
+    padding: 10px;
   }
 `
 

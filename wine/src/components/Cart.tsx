@@ -49,7 +49,7 @@ const CartCount = styled.span`
     background-color: white;
     border-radius: 50%;
     color: #4FBFA5;
-    z-index: 2;
+    z-index: 1;
 `
 
 const CartIcon = styled(Image)`

@@ -10,7 +10,7 @@ interface Props{
 
 export const InputCheckbox = ({ label, checked, onClick }: Props) => {
   return (
-    <CheckboxContent onClick={onClick}>
+    <CheckboxContent checked={checked} onClick={onClick}>
       <Span checked={checked} id={label}></Span>
       <label htmlFor={label}>{label}</label>
     </CheckboxContent>
@@ -21,7 +21,7 @@ interface StylesProps{
   checked: boolean
 }
 
-const CheckboxContent = styled.div`
+const CheckboxContent = styled.div<StylesProps>`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -45,6 +45,14 @@ const CheckboxContent = styled.div`
   &:hover > label {
     color: var(--light-tannat);
   }
+
+  @media (max-width: 768px){
+      border: ${props => props.checked ? '1px solid var(--light-tannat)' : '1px solid #dedede'};
+      border-radius: 5px;
+      display: block;
+      padding: 10px;
+      width: 100%;
+    }
 `
 
 const Span = styled.span<StylesProps>`
@@ -54,6 +62,7 @@ const Span = styled.span<StylesProps>`
     border: 1px solid #ccc;
     line-height: 0;
     padding: 2px;
+    margin-right: 5px;
     
     &::before{
       width: 11px;
@@ -66,7 +75,5 @@ const Span = styled.span<StylesProps>`
       vertical-align: middle;
       border-radius: 3px;
       background: ${props => (props.checked ? 'var(--light-tannat)' : '#fff')};
-    }
-
-    
+    }    
 `

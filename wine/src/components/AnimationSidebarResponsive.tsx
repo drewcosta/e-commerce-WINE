@@ -77,6 +77,6 @@ const Shadow = styled.div<SidebarProps>`
     width: 100vw;
 
     background-color: rgba(0, 0, 0, 0.32);
-    z-index: 10;   
+    z-index: 999;   
 `
 

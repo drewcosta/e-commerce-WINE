@@ -1,12 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { AnimationSidebarResponsive } from './AnimationSidebarResponsive'
+import { FilterSideBar } from './FilterSideBar'
 
 export const FooterFilter = () => {
+  const [filterBar, setFilterBar] = useState(false)
+
+  const showFilterBar = () => setFilterBar(!filterBar)
+
   return (
     <Container>
       <ul>
-        <li>Topo</li>
-        <li>Filtrar</li>
+        <li >Topo</li>
+        <li onClick={showFilterBar}>Filtrar</li>
+        {filterBar && 
+          <AnimationSidebarResponsive>
+            <FilterSideBar show={filterBar} />
+          </AnimationSidebarResponsive>
+        }
       </ul>
     </Container>
   )

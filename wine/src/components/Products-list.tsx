@@ -36,5 +36,4 @@ const ContainerList = styled.div`
   align-items: center;
   gap: 10px;
   width: 52rem;
-  padding: 10px;
 `

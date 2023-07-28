@@ -1,5 +1,4 @@
-'use client'
-import { styled } from 'styled-components'
+import { css, styled } from 'styled-components'
 import { useFilter } from '@/hooks/useFilter'
 import { FilterTypes } from '@/types/filter-types'
 import { InputCheckbox } from './InputCheckbox'
@@ -37,5 +36,9 @@ const ContainerFilterType = styled.div`
     font-weight: 500;
     text-transform: capitalize;
     margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px){
+    width: 100%;
   }
 `
