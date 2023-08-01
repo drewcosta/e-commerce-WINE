@@ -3,20 +3,26 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import cartIcon from '../assets/cart-icon.svg'
 import { useLocalStorage } from '@/hooks/useLocalStorage'
+import { useRouter } from 'next/navigation'
 
 
 export const Cart = () => {
+  const router = useRouter()
   const { value } = useLocalStorage('cart-items', []);
 
+  const handleNavigateToCart = () => {
+    router.push('/cart')
+  }
+
   return (
-    <CartContainer>
+    <CartContainer onClick={handleNavigateToCart}>
       <CartIcon src={cartIcon} alt=''  height={48}/>
       {value.length > 0 && <CartCount>{value.length}</CartCount>}
     </CartContainer>
   )
 }
 
-const CartContainer = styled.div`
+const CartContainer = styled.button`
   position: relative;
   display: flex;
   justify-content: center;
@@ -29,7 +35,6 @@ const CartContainer = styled.div`
   height: 50px;
   
   cursor: pointer;  
-  
 `
 
 const CartCount = styled.span`
