@@ -10,7 +10,7 @@ import logo from '../assets/logo.svg';
 export const HeaderDesktop = () => {
   return (
     <HeaderDesktopContainer>
-      <Logo src={logo} alt="" />
+      <Logo src={logo} alt=""/>
       <NavBar />
       <div>
         <Search />
