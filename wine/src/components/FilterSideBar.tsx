@@ -12,7 +12,7 @@ export const FilterSideBar = ({ show }: Props) => {
     <Container show={show}>
       <h1>Refine sua busca</h1>
       <FilterByType />
-      {/* <FilterByPriorityPrices /> */}
+      <FilterByPriorityPrices />
     </Container>
   )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { FilterTypes } from '@/types/filter-types'
 
-interface Props{
+interface Props {
   label: FilterTypes,
   checked: boolean,
   onClick?: () => void,
@@ -17,7 +17,7 @@ export const InputCheckbox = ({ label, checked, onClick }: Props) => {
   )
 }
 
-interface StylesProps{
+interface StylesProps {
   checked: boolean
 }
 

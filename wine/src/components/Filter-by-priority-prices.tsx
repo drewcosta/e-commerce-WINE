@@ -5,21 +5,41 @@ import styled from 'styled-components'
 import { InputRadio } from './InputRadio'
 
 export const FilterByPriorityPrices = () => {
-  const FilterValues = Object.values(PriorityPrices) as PriorityPrices[]
-
-  const { priority, setPriority} = useFilter()
+  const { priority, setPriority } = useFilter()
 
   return (
     <ContainerFilterPrices>
       <h3>Por Preço</h3>
-      {FilterValues.map((filter) => (
-        <InputRadio 
-          key={filter}
-          label={filter}
-          checked={priority === filter}
-          onChange={() => setPriority(filter)}
-        />
-      ))}
+
+      <InputRadio
+        label={PriorityPrices.ATE_40}
+        checked={priority === PriorityPrices.ATE_40}
+        onClick={() => setPriority(PriorityPrices.ATE_40)}
+      />
+
+      <InputRadio
+        label={PriorityPrices.R40_60}
+        checked={priority === PriorityPrices.R40_60}
+        onClick={() => setPriority(PriorityPrices.R40_60)}
+      />
+
+      <InputRadio
+        label={PriorityPrices.R100_200}
+        checked={priority === PriorityPrices.R100_200}
+        onClick={() => setPriority(PriorityPrices.R100_200)}
+      />
+
+      <InputRadio
+        label={PriorityPrices.R200_500}
+        checked={priority === PriorityPrices.R200_500}
+        onClick={() => setPriority(PriorityPrices.R200_500)}
+      />
+
+      <InputRadio
+        label={PriorityPrices.ACIMA_500}
+        checked={priority === PriorityPrices.ACIMA_500}
+        onClick={() => setPriority(PriorityPrices.ACIMA_500)}
+      />
     </ContainerFilterPrices>
   )
 }
@@ -36,5 +56,9 @@ h3{
     font-weight: 500;
     text-transform: capitalize;
     margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px){
+    width: 100%;
   }
 `
