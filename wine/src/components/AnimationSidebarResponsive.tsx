@@ -64,7 +64,7 @@ const Close = styled.div`
   cursor: pointer;
 `
 const Content = styled.div`
-  margin-top: 100px;
+  margin-top: 50px;
 `
 
 const Shadow = styled.div<SidebarProps>`

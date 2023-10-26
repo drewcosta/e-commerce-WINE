@@ -56,11 +56,11 @@ export default function CartPage(){
         </CartListContainer>
         <CartResultContainer>
             <h3>Resumo do pedido</h3>
-            <TotalItem isBold={false}>
+            <TotalItem>
               <p>Subtotal de produtos</p>
               <p>{cartTotal}</p>
             </TotalItem>
-            <TotalItem isBold={false}>
+            <TotalItem>
               <p>Entrega</p>
               <p>{delivery}.00</p>
             </TotalItem>
@@ -135,7 +135,7 @@ const CartResultContainer = styled.div`
   }
 `
 
-const TotalItem = styled.div<{ isBold: boolean }>`
+const TotalItem = styled.div<{ isBold?: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
