@@ -8,10 +8,14 @@ export const FooterFilter = () => {
 
   const showFilterBar = () => setFilterBar(!filterBar)
 
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   return (
     <Container>
       <ul>
-        <li >Topo</li>
+        <li onClick={scrollToTop}>Topo</li>
         <li onClick={showFilterBar}>Filtrar</li>
         {filterBar && 
           <AnimationSidebarResponsive>
