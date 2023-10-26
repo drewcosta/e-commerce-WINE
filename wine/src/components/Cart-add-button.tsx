@@ -1,13 +1,36 @@
+import { useProduct } from '@/hooks/useProduct';
 import React from 'react'
 import styled from 'styled-components'
 
-interface Props{
-  onClick?: () => void
+interface Props {
+  searchParamsId: string,
 }
 
-export const CartAddButton = ({ onClick }: Props) => {
+export const CartAddButton = ({ searchParamsId }: Props) => {
+  const { data } = useProduct(searchParamsId);
+
+  const handleAddToCart = () => {
+    let cartItems = localStorage.getItem('cart-items');
+    if (cartItems) {
+      let cartItemsArray = JSON.parse(cartItems);
+
+      let existingProductIndex = cartItemsArray.findIndex((item: { id: string; }) => item.id === searchParamsId);
+
+      if (existingProductIndex != -1) {
+        cartItemsArray[existingProductIndex].quantity += 1;
+      } else {
+        cartItemsArray.push({ ...data, quantity: 1, id: searchParamsId })
+      }
+
+      localStorage.setItem('cart-items', JSON.stringify(cartItemsArray));
+    } else {
+      const newCart = [{ ...data, quantity: 1, id: searchParamsId }]
+      localStorage.setItem('cart-items', JSON.stringify(newCart));
+    }
+  }
+
   return (
-    <Button onClick={onClick}>Adicionar</Button>
+    <Button onClick={handleAddToCart}>Adicionar</Button>
   )
 }
 
