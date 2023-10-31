@@ -1,6 +1,5 @@
 import React from 'react'
 import { FilterByType } from './Filter-by-type'
-import { FilterByPriorityPrices } from './Filter-by-priority-prices'
 import styled from 'styled-components'
 
 interface Props{
@@ -12,7 +11,6 @@ export const FilterSideBar = ({ show }: Props) => {
     <Container show={show}>
       <h1>Refine sua busca</h1>
       <FilterByType />
-      <FilterByPriorityPrices />
     </Container>
   )
 }

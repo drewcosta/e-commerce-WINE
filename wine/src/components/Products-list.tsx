@@ -5,13 +5,14 @@ import { ProductCard } from './Product-card'
 import { useState } from 'react'
 import { FilterTypes } from '@/types/filter-types'
 import { useFilter } from '@/hooks/useFilter'
+import { FilterByPriorityPrices } from './Filter-by-priority-prices'
 
 export const ProductsList = () => {
   const [value, setValue] = useState(20)
   const { data } = useProducts()
   const { type } = useFilter()
   console.log(data)
-  
+
   const getCountForType = (type: string) => {
     if (!type) {
       return data?.length
@@ -21,7 +22,15 @@ export const ProductsList = () => {
 
   return (
     <ContainerProducts>
-      <ObjectsCount> <strong>{getCountForType(type)} </strong> produtos encontrados</ObjectsCount>
+      <HeaderProductList>
+        <HeaderProductListText>
+          <h3>
+            <span>{getCountForType(type)} </span>
+            <span>produtos encontrados</span>
+          </h3>
+        </HeaderProductListText>
+        <FilterByPriorityPrices />
+      </HeaderProductList>
       <ContentList>
         {data?.map((product, index) => index < value && (
           <ProductCard
@@ -40,13 +49,12 @@ export const ProductsList = () => {
 const ContainerProducts = styled.div`
   display: flex;
   flex-direction: column;
-  width: 52rem;
+  width: 50rem;
 
   @media (max-width: 1024px) {
     align-items: center;
   }
 `
-
 const ContentList = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -60,6 +68,21 @@ const ContentList = styled.div`
   }
 `
 
-const ObjectsCount = styled.div`
+const HeaderProductList = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 30px;
+  width: 100%;
+
+  border-bottom: 1px solid #b6b3b3e6;
+  padding-bottom: 15px;
+`
+
+const HeaderProductListText = styled.div`
+  h3 > span:nth-child(2){
+    font-weight: normal;  
+    font-size: 15px;
+    color: var(--gray-default);
+  }
 `

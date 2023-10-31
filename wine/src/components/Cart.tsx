@@ -17,7 +17,7 @@ export const Cart = () => {
   return (
     <CartContainer onClick={handleNavigateToCart}>
       <CartIcon src={cartIcon} alt=''  height={48}/>
-      {value.length > 0 && <CartCount>{value.length}</CartCount>}
+      {value.length >= 0 && <CartCount>{value.length}</CartCount>}
     </CartContainer>
   )
 }
