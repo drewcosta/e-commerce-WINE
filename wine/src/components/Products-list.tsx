@@ -3,19 +3,18 @@ import { useProducts } from '@/hooks/useProducts'
 import styled from 'styled-components'
 import { ProductCard } from './Product-card'
 import { useState } from 'react'
-import { FilterTypes } from '@/types/filter-types'
 import { useFilter } from '@/hooks/useFilter'
 import { FilterByPriorityPrices } from './Filter-by-priority-prices'
+import { Pagination } from './Pagination'
 
 export const ProductsList = () => {
-  const [value, setValue] = useState(20)
-  const { data } = useProducts()
+  // const [value, setValue] = useState(5)
+  const { data, totalCount } = useProducts()
   const { type } = useFilter()
-  console.log(data)
 
   const getCountForType = (type: string) => {
     if (!type) {
-      return data?.length
+      return totalCount
     }
     return data?.filter((filter) => filter.category === type).length;
   }
@@ -32,7 +31,7 @@ export const ProductsList = () => {
         <FilterByPriorityPrices />
       </HeaderProductList>
       <ContentList>
-        {data?.map((product, index) => index < value && (
+        {data?.map((product, index) => (
           <ProductCard
             key={product.id}
             name={product.name}
@@ -42,6 +41,14 @@ export const ProductsList = () => {
           />
         ))}
       </ContentList>
+
+      {/* <button
+        style={{ display: "flex", justifyContent: "center", color: "var(--light-tannat)", border: "2px solid var(--light-tannat)", borderRadius: "4px", padding: "20px", cursor: "pointer", textTransform: "uppercase" }}
+        // onClick={() => setValue(value + 8)}
+      >mostrar mais</button> */}
+      <FooterProductList>
+        <Pagination />
+      </FooterProductList>
     </ContainerProducts>
   )
 }
@@ -85,4 +92,8 @@ const HeaderProductListText = styled.div`
     font-size: 15px;
     color: var(--gray-default);
   }
+`
+
+const FooterProductList = styled.div`
+  width: inherit;
 `
