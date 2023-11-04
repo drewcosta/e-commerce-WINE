@@ -5,12 +5,14 @@ import { FilterTypes } from '@/types/filter-types'
 
 export const FilterContext = createContext({
   search: '',
-  page: 0,
+  currentPage: 0,
+  perPage: 0,
   type: '',
-  priority: PriorityPrices.MINOR_PRICE,
+  priority: '',
   setPriority: (value: PriorityPrices) => {},
   setSearch: (value: string) => {},
-  setPage: (value: number) => {},
+  setCurrentPage: (value: number) => {},
+  setPerPage: (value: number) => {},
   setType: (value: FilterTypes) => {},
 })
 
@@ -20,20 +22,23 @@ interface ProviderProps{
 
 export const FilterContextProvider = ({children}: ProviderProps) => {
   const [search, setSearch] = useState('')
-  const [page, setPage] = useState(0)
+  const [currentPage, setCurrentPage] = useState(0)
+  const [perPage, setPerPage] = useState(10);
   const [type, setType] = useState('')
-  const [priority, setPriority] = useState(PriorityPrices.MINOR_PRICE)
+  const [priority, setPriority] = useState('')
 
   return (
     <FilterContext.Provider 
       value={{
         search,
-        page,
+        currentPage,
+        perPage,
         type,
         priority,
         setPriority,
         setSearch,
-        setPage,
+        setCurrentPage,
+        setPerPage,
         setType,
       }}>
       {children}
