@@ -25,7 +25,7 @@ export const FilterContextProvider = ({children}: ProviderProps) => {
   const [currentPage, setCurrentPage] = useState(0)
   const [perPage, setPerPage] = useState(10);
   const [type, setType] = useState('')
-  const [priority, setPriority] = useState('')
+  const [priority, setPriority] = useState(PriorityPrices.MINOR_PRICE)
 
   return (
     <FilterContext.Provider 

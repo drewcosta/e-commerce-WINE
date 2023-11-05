@@ -29,7 +29,7 @@ export const usePagination = () => {
     goToPage,
     goToNextPage,
     goToPrevPage,
-    totalPage
+    totalPage,
   }
 }
 
