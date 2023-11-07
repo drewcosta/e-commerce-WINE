@@ -8,12 +8,12 @@ interface Props {
   onClick?: () => void,
 }
 
-export const InputCheckbox = ({ label, checked, onClick }: Props) => {
+export const InputCheckboxType = ({ label, checked, onClick }: Props) => {
   return (
-    <CheckboxContent checked={checked} onClick={onClick}>
+    <CheckboxItemList checked={checked} onClick={onClick}>
       <Span checked={checked} id={label}></Span>
       <label htmlFor={label}>{label}</label>
-    </CheckboxContent>
+    </CheckboxItemList>
   )
 }
 
@@ -21,7 +21,7 @@ interface StylesProps {
   checked: boolean
 }
 
-const CheckboxContent = styled.div<StylesProps>`
+const CheckboxItemList = styled.li<StylesProps>`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -46,7 +46,7 @@ const CheckboxContent = styled.div<StylesProps>`
     color: var(--light-tannat);
   }
 
-  @media (max-width: 768px){
+  @media (max-width: 425px){
       border: ${props => props.checked ? '1px solid var(--light-tannat)' : '1px solid #dedede'};
       border-radius: 5px;
       display: block;

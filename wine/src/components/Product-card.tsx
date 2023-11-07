@@ -20,9 +20,9 @@ export const ProductCard = ({ name, image, price, id }: ProductCardProps) => {
   return (
     <Container>
       <Card>
-        <img src={image} alt="" onClick={handleNavigate}/>
-        <h4>{name}</h4>
-        <p><strong>Sócio wine</strong>R${price}</p>
+        <img className='cardImg' src={image} alt="" onClick={handleNavigate}/>
+        <h4 className='cardDescription'>{name}</h4>
+        <p className='cardPrice'><strong>Sócio wine</strong>R${price}</p>
       </Card>
       <CartAddButton searchParamsId={id} />
     </Container>
@@ -50,15 +50,15 @@ const Card = styled.div`
   background: #FFF;
   box-shadow: 0px 9.733839988708496px 14.600760459899902px 0px rgba(0, 0, 0, 0.10);
 
-  > img {
+  > .cardImg {
     padding: 10px 30px;
     width: 12rem;
     cursor: pointer;
   }
 
-  h4{
+  .cardDescription{
     height: 60px;
-    font-size: 1rem;
+    font-size: 14px;
     cursor: context-menu;
     
     @media (max-width: 768px) {
@@ -66,7 +66,7 @@ const Card = styled.div`
     }
   }
 
-  p{
+  .cardPrice{
     color: #B6116E;
     font-weight: 700;
     font-size: 0.875rem;

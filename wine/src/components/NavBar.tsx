@@ -45,6 +45,7 @@ const NavItem = styled.li<Props>`
   text-transform: capitalize;
   cursor: pointer;
 
+  padding: 30px 0;
   border-bottom: ${props => props.selected ? '2px solid var(--light-tannat)' : ''};
 
   &:hover{

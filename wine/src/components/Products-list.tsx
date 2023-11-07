@@ -28,6 +28,7 @@ export const ProductsList = () => {
         </HeaderProductListText>
         <FilterByPriorityPrices />
       </HeaderProductList>
+
       <ContentList>
         {data?.map((product) =>(
           <ProductCard
@@ -40,12 +41,10 @@ export const ProductsList = () => {
         ))}
       </ContentList>
 
-      {/* <button
-        style={{ display: "flex", justifyContent: "center", color: "var(--light-tannat)", border: "2px solid var(--light-tannat)", borderRadius: "4px", padding: "20px", cursor: "pointer", textTransform: "uppercase" }}
-      >mostrar mais</button> */}
       <FooterProductList>
         <Pagination />
       </FooterProductList>
+      
     </ContainerProducts>
   )
 }
@@ -57,19 +56,16 @@ const ContainerProducts = styled.div`
 
   @media (max-width: 1024px) {
     align-items: center;
+    width: 100%;
   }
 `
 const ContentList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 10px;
   max-width: 100%;
-
-  @media (max-width: 1024px) {
-    justify-content: center;
-  }
 `
 
 const HeaderProductList = styled.div`

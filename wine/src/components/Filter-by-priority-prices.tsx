@@ -11,25 +11,25 @@ export const FilterByPriorityPrices = () => {
   }
 
   return (
-    <ContainerFilterPrices>
+    <ContainerFilterPriority>
       <h3>Ordenar</h3>
 
-      <FilterByOrder>
-        <ItemOrder
+      <FilterListByPriority>
+        <ItemPriority
           selected={priority === PriorityPrices.MINOR_PRICE}
           onClick={() => handleChangePriority(PriorityPrices.MINOR_PRICE)}
         >
           $
-        </ItemOrder>
-        <ItemOrder
+        </ItemPriority>
+        <ItemPriority
           selected={priority === PriorityPrices.BIGGEST_PRICE}
           onClick={() => handleChangePriority(PriorityPrices.BIGGEST_PRICE)}
         >
           $$
-        </ItemOrder>
-      </FilterByOrder>
+        </ItemPriority>
+      </FilterListByPriority>
 
-    </ContainerFilterPrices>
+    </ContainerFilterPriority>
   )
 }
 
@@ -37,7 +37,7 @@ interface FilterItemOrderProps {
   selected: boolean;
 }
 
-const ContainerFilterPrices = styled.div`
+const ContainerFilterPriority = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -59,7 +59,7 @@ h3{
   }
 `
 
-const FilterByOrder = styled.ul`
+const FilterListByPriority = styled.ul`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -70,7 +70,7 @@ const FilterByOrder = styled.ul`
   list-style: none;
 `
 
-const ItemOrder = styled.li<FilterItemOrderProps>`
+const ItemPriority = styled.li<FilterItemOrderProps>`
   color: ${props => props.selected ? 'white' : 'var(--light-tannat)'};
   background-color: ${props => props.selected ? 'var(--light-tannat)' : 'none'};
 
