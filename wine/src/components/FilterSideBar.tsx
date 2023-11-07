@@ -1,6 +1,7 @@
 import React from 'react'
 import { FilterByType } from './Filter-by-type'
 import styled from 'styled-components'
+import { FilterByPriceRange } from './Filter-by-price-range'
 
 interface Props{
   show?: string | boolean
@@ -11,6 +12,7 @@ export const FilterSideBar = ({ show }: Props) => {
     <Container show={show}>
       <h1>Refine sua busca</h1>
       <FilterByType />
+      <FilterByPriceRange />
     </Container>
   )
 }
@@ -36,7 +38,7 @@ const Container = styled.aside<Props>`
     }
   }
 
-  @media (max-width: 768px){
+  @media (max-width: 425px){
     display: ${props => (props.show ? 'flex' : 'none')};
     width: 100%;
     padding: 10px;

@@ -1,5 +1,6 @@
 import { FilterTypes } from "@/types/filter-types";
 import { PriorityPrices } from "@/types/priority-prices";
+import { PriceRange } from "@/types/price-range";
 
 export function getCategoryByType(type: FilterTypes | string) {
   if (type == FilterTypes.BRANCO) return 'branco'
@@ -15,18 +16,28 @@ export function getFieldByPriority(priority: PriorityPrices | string) {
   return { field: 'price_in_cents', order: 'ASC' }
 }
 
+export function getPriceRange(priceRange: PriceRange | string) {
+  if (priceRange == PriceRange.ATE40) return { price_in_cents_lte: 40 }
+  if (priceRange == PriceRange.R40A60) return { price_in_cents_gte: 40, price_in_cents_lte: 60 }
+  if (priceRange == PriceRange.R60A100) return { price_in_cents_gte: 60, price_in_cents_lte: 100 }
+  if (priceRange == PriceRange.R100A200) return { price_in_cents_gte: 100, price_in_cents_lte: 200 }
+  if (priceRange == PriceRange.R200A500) return { price_in_cents_gte: 200, price_in_cents_lte: 500 }
+  if (priceRange == PriceRange.R200A500) return { price_in_cents_gte: 500 }
+  return ''
+}
+
 export const mountQuery = (type: FilterTypes | string) => {
   if (!type) {
     return `
-  query($page: Int, $perPage: Int, $sortField: String, $sortOrder: String){
-    allProducts(page: $page, perPage: $perPage, sortField: $sortField, sortOrder: $sortOrder){
+  query($page: Int, $perPage: Int, $sortField: String, $sortOrder: String, $price_in_cents_lte: Int, $price_in_cents_gte: Int){
+    allProducts(page: $page, perPage: $perPage, sortField: $sortField, sortOrder: $sortOrder, filter:{price_in_cents_lte: $price_in_cents_lte, price_in_cents_gte: $price_in_cents_gte}){
       id
       name
       price_in_cents
       image_url
       category
     }
-    _allProductsMeta {
+    _allProductsMeta(filter:{price_in_cents_lte: $price_in_cents_lte, price_in_cents_gte: $price_in_cents_gte}) {
       count
     }
   }
@@ -34,15 +45,15 @@ export const mountQuery = (type: FilterTypes | string) => {
   }
 
   return `
-  query($page: Int, $perPage: Int, $sortField: String, $sortOrder: String, $categoryFilter: String){
-    allProducts(page: $page, perPage: $perPage, sortField: $sortField, sortOrder: $sortOrder, filter:{category: $categoryFilter}){
+  query($page: Int, $perPage: Int, $sortField: String, $sortOrder: String, $categoryFilter: String, $price_in_cents_lte: Int, $price_in_cents_gte: Int){
+    allProducts(page: $page, perPage: $perPage, sortField: $sortField, sortOrder: $sortOrder, filter:{category: $categoryFilter, price_in_cents_lte: $price_in_cents_lte, price_in_cents_gte: $price_in_cents_gte}){
       id
       name
       price_in_cents
       image_url
       category
     }
-    _allProductsMeta(filter:{category: $categoryFilter}) {
+    _allProductsMeta(filter:{category: $categoryFilter, price_in_cents_lte: $price_in_cents_lte, price_in_cents_gte: $price_in_cents_gte}) {
       count
     }
   }
