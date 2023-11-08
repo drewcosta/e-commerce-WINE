@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { AnimationSidebarResponsive } from '../AnimationSidebarResponsive'
 import { FilterSideBar } from '../filters/FilterSideBar'
+import { AnimationSidebarResponsive } from '../animations/AnimationSidebarResponsive'
 
 
 export const FooterFilter = () => {

@@ -2,10 +2,10 @@ import React, { useState } from 'react'
 import styled, { css } from 'styled-components'
 import Image from 'next/image';
 import logo from '../../assets/logo.svg';
-import { AnimationSidebarResponsive } from '../AnimationSidebarResponsive'
 import { HeaderSearchMenu } from './Header-search-menu';
 import { HeaderNavBarMenu } from './Header-navbar-menu';
 import { HeaderCartMenu } from './Header-cart-menu';
+import { AnimationSidebarResponsive } from '../animations/AnimationSidebarResponsive';
 
 export const HeaderMobile = () => {
   const [sidebar, setSidebar] = useState(false)
