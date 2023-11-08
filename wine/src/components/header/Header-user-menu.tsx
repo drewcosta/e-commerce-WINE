@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import user from '../assets/user-icon.svg'
+import user from '../../assets/user-icon.svg'
 
 
-export const UserAccount = () => {
+export const HeaderUserMenu = () => {
   return (
     <UserContainer>
       <User src={user} alt='' />

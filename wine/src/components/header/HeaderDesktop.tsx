@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components';
 import Image from 'next/image';
 import logo from '../../assets/logo.svg';
-import { UserAccount } from '../UserAccount';
 import { HeaderSearchMenu } from './Header-search-menu';
 import { HeaderNavBarMenu } from './Header-navbar-menu';
 import { HeaderCartMenu } from './Header-cart-menu';
+import { HeaderUserMenu } from './Header-user-menu';
 
 export const HeaderDesktop = () => {
   return (
@@ -14,7 +14,7 @@ export const HeaderDesktop = () => {
       <HeaderNavBarMenu />
       <div>
         <HeaderSearchMenu />
-        <UserAccount />
+        <HeaderUserMenu />
         <HeaderCartMenu />
       </div>
     </HeaderDesktopContainer>
