@@ -1,21 +1,21 @@
 import React from 'react'
 import styled from 'styled-components';
-import { Cart } from './Cart';
-import { NavBar } from './NavBar';
-import { Search } from './Search';
-import { UserAccount } from './UserAccount';
 import Image from 'next/image';
-import logo from '../assets/logo.svg';
+import logo from '../../assets/logo.svg';
+import { UserAccount } from '../UserAccount';
+import { HeaderSearchMenu } from './Header-search-menu';
+import { HeaderNavBarMenu } from './Header-navbar-menu';
+import { HeaderCartMenu } from './Header-cart-menu';
 
 export const HeaderDesktop = () => {
   return (
     <HeaderDesktopContainer>
       <Logo src={logo} alt=""/>
-      <NavBar />
+      <HeaderNavBarMenu />
       <div>
-        <Search />
+        <HeaderSearchMenu />
         <UserAccount />
-        <Cart />
+        <HeaderCartMenu />
       </div>
     </HeaderDesktopContainer>
   )
@@ -25,7 +25,7 @@ const HeaderDesktopContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 31px 250px;
+  padding: 0 250px;
 
   border-bottom: 2px solid #CCCCCC;
   background: #FFFFFF;
@@ -42,7 +42,7 @@ const HeaderDesktopContainer = styled.header`
   }
 
   @media (max-width: 1440px) {
-    padding: 31px 70px;
+    padding: 0px 70px;
   }
 `;
 

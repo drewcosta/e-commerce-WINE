@@ -1,19 +1,17 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import lupa from '../assets/lupa-icon.svg'
-import { SearchInput } from './SearchInput'
+import lupa from '../../assets/lupa-icon.svg'
 import { useFilter } from '@/hooks/useFilter'
+import { SearchInput } from '../Input-search'
 
-export const Search = () => {
+export const HeaderSearchMenu = () => {
   const {search, setSearch} = useFilter()
   const [show, setShow] = useState(false)
 
   const toogleShow = () => {
     setShow(prev => !prev)
   }
-
-  console.log(search)
 
   return (
     <>

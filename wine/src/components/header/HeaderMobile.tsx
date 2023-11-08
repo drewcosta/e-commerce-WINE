@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import { Cart } from './Cart'
-import { NavBar } from './NavBar'
-import { Search } from './Search'
 import styled, { css } from 'styled-components'
 import Image from 'next/image';
-import logo from '../assets/logo.svg';
-import { AnimationSidebarResponsive } from './AnimationSidebarResponsive'
-
+import logo from '../../assets/logo.svg';
+import { AnimationSidebarResponsive } from '../AnimationSidebarResponsive'
+import { HeaderSearchMenu } from './Header-search-menu';
+import { HeaderNavBarMenu } from './Header-navbar-menu';
+import { HeaderCartMenu } from './Header-cart-menu';
 
 export const HeaderMobile = () => {
   const [sidebar, setSidebar] = useState(false)
@@ -19,12 +18,12 @@ export const HeaderMobile = () => {
       <Logo src={logo} alt="" />
       {sidebar && 
         <AnimationSidebarResponsive>
-          <NavBar />
+          <HeaderNavBarMenu />
         </AnimationSidebarResponsive>
       }
       <div>
-        <Search />
-        <Cart />
+        <HeaderSearchMenu />
+        <HeaderCartMenu />
       </div>
     </HeaderMobileContainer>
   )

@@ -3,8 +3,8 @@ import { useProducts } from '@/hooks/useProducts'
 import styled from 'styled-components'
 import { ProductCard } from './Product-card'
 import { useFilter } from '@/hooks/useFilter'
-import { FilterByPriorityPrices } from './Filter-by-priority-prices'
-import { Pagination } from './Pagination'
+import { FilterByPriorityPrices } from '../filters/Filter-by-priority-prices'
+import { Pagination } from '../Pagination'
 
 export const ProductsList = () => {
   const { data, totalCount } = useProducts()

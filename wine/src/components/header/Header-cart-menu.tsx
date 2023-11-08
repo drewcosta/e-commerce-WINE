@@ -1,12 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import cartIcon from '../assets/cart-icon.svg'
+import cartIcon from '../../assets/cart-icon.svg'
 import { useLocalStorage } from '@/hooks/useLocalStorage'
 import { useRouter } from 'next/navigation'
 
-
-export const Cart = () => {
+export const HeaderCartMenu = () => {
   const router = useRouter()
   const { value } = useLocalStorage('cart-items', []);
 

@@ -6,27 +6,22 @@ import styled from 'styled-components'
 export const FilterByPriorityPrices = () => {
   const { priority, setPriority } = useFilter()
 
-  const handleChangePriority = (value: PriorityPrices) => {
-    setPriority(value)
-  }
+  const PriorityPricesValues = Object.values(PriorityPrices)
 
   return (
     <ContainerFilterPriority>
       <h3>Ordenar</h3>
 
       <FilterListByPriority>
-        <ItemPriority
-          selected={priority === PriorityPrices.MINOR_PRICE}
-          onClick={() => handleChangePriority(PriorityPrices.MINOR_PRICE)}
-        >
-          $
-        </ItemPriority>
-        <ItemPriority
-          selected={priority === PriorityPrices.BIGGEST_PRICE}
-          onClick={() => handleChangePriority(PriorityPrices.BIGGEST_PRICE)}
-        >
-          $$
-        </ItemPriority>
+        {PriorityPricesValues.map((priorityValue, index) => (
+          <ItemPriority
+            key={index}
+            selected={priority === priorityValue}
+            onClick={() => setPriority(priorityValue)}
+          >
+            {priorityValue}
+          </ItemPriority>
+        ))}
       </FilterListByPriority>
 
     </ContainerFilterPriority>

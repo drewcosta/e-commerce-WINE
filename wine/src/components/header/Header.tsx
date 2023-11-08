@@ -1,6 +1,5 @@
 'use client'
 import React, { useEffect, useState } from 'react';
-import styled, { css } from 'styled-components';
 import { HeaderDesktop } from './HeaderDesktop';
 import { HeaderMobile } from './HeaderMobile';
 

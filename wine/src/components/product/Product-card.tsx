@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { CartAddButton } from './Cart-add-button'
 import { useRouter } from 'next/navigation'
+import { CartAddButton } from '../button/Cart-add-button'
 
 interface ProductCardProps{
   name?: string,

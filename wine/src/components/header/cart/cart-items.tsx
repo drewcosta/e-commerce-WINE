@@ -31,7 +31,7 @@ export const CartItems = ({ product, handleUpdateQuantity, handleDelete }: CartP
             <option value={4}>4</option>
             <option value={5}>5</option>
           </SelectQuantity>
-          <span>{product.price_in_cents}</span>
+          <span>R$ {product.price_in_cents}</span>
         </div>
       </div>
     </Item>

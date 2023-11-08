@@ -1,6 +1,6 @@
 import React from 'react'
-import { FilterByType } from './Filter-by-type'
 import styled from 'styled-components'
+import { FilterByType } from './Filter-by-type'
 import { FilterByPriceRange } from './Filter-by-price-range'
 
 interface Props{
