@@ -1,7 +1,7 @@
 import { FilterTypes } from '@/types/filter-types'
 import { ContainerAdvancedSearch, AdvancedSearchTitle, AdvancedSearchList } from '@/styles/components/filter-styles'
-import { InputCheckboxType } from '../Input-checkbox-type'
 import { useFilter } from '@/hooks/useFilter'
+import { InputCheckboxType } from '../input/Input-checkbox-type'
 
 export const FilterByType = () => {
   const { type, setType } = useFilter()

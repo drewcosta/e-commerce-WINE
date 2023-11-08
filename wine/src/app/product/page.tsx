@@ -1,7 +1,7 @@
 'use client'
-import { BackBtn } from '@/components/Back-button'
-import { CartAddButton } from '@/components/Cart-add-button'
 import { DefaultPageLayout } from '@/components/DefaultPageLayout'
+import { BackBtn } from '@/components/button/Back-button';
+import { CartAddButton } from '@/components/button/Cart-add-button';
 import { useProduct } from '@/hooks/useProduct'
 import styled from 'styled-components'
 

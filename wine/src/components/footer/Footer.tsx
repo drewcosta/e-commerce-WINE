@@ -1,14 +1,14 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { FooterFilter } from './Footer-filter'
+import { FooterFilter } from './Footer-filter-mobile'
 import styled from 'styled-components';
 
 export const Footer = () => {
   const [isMobile, setIsMobile] = useState(false);
-  
+
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 425);
     };
 
     handleResize();
@@ -23,7 +23,9 @@ export const Footer = () => {
   return (
     <>
       {isMobile ? (
-        <FooterFilter />
+        <>
+          <FooterFilter />
+        </>
       ) : (
         <Container />
       )}

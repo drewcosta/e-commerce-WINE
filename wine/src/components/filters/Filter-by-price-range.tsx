@@ -1,7 +1,7 @@
 import { useFilter } from "@/hooks/useFilter"
 import { PriceRange } from "@/types/price-range"
 import { ContainerAdvancedSearch, AdvancedSearchTitle, AdvancedSearchList } from "@/styles/components/filter-styles"
-import { InputRadioPriceRange } from "../Input-radio-price-range"
+import { InputRadioPriceRange } from "../input/Input-radio-price-range"
 
 export const FilterByPriceRange = () => {
   const { priceRange, setPriceRange } = useFilter()

@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import lupa from '../../assets/lupa-icon.svg'
 import { useFilter } from '@/hooks/useFilter'
-import { SearchInput } from '../Input-search'
+import { InputSearchMenu } from '../input/Input-search'
 
 export const HeaderSearchMenu = () => {
   const {search, setSearch} = useFilter()
@@ -19,7 +19,7 @@ export const HeaderSearchMenu = () => {
         <SearchImg src={lupa} alt='' onClick={toogleShow}/>
       </SearchContainer>
       {show && 
-        <SearchInput 
+        <InputSearchMenu 
           value={search}
           handleChange={setSearch}
         />

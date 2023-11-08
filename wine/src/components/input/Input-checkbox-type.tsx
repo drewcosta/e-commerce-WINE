@@ -3,22 +3,22 @@ import styled from 'styled-components'
 import { FilterTypes } from '@/types/filter-types'
 
 interface Props {
-  label: FilterTypes,
+  label?: FilterTypes,
   checked: boolean,
   onClick?: () => void,
 }
 
 export const InputCheckboxType = ({ label, checked, onClick }: Props) => {
   return (
-    <CheckboxItemList checked={checked} onClick={onClick}>
-      <Span checked={checked} id={label}></Span>
+    <CheckboxItemList selected={checked} onClick={onClick}>
+      <Span selected={checked} id={label}></Span>
       <label htmlFor={label}>{label}</label>
     </CheckboxItemList>
   )
 }
 
-interface StylesProps {
-  checked: boolean
+interface StylesProps{
+  selected: boolean
 }
 
 const CheckboxItemList = styled.li<StylesProps>`
@@ -30,6 +30,7 @@ const CheckboxItemList = styled.li<StylesProps>`
   cursor: pointer;
 
   label{
+    font-size: 14px;
     color: #1D1D1B;
     text-transform: capitalize;
     cursor: pointer;
@@ -47,7 +48,7 @@ const CheckboxItemList = styled.li<StylesProps>`
   }
 
   @media (max-width: 425px){
-      border: ${props => props.checked ? '1px solid var(--light-tannat)' : '1px solid #dedede'};
+      border: ${props => props.selected ? '1px solid var(--light-tannat)' : '1px solid #dedede'};
       border-radius: 5px;
       display: block;
       padding: 10px;
@@ -71,9 +72,9 @@ const Span = styled.span<StylesProps>`
       display: inline-block;
       transition: all .2s;
       transform: scale(0);
-      transform: ${props => (props.checked ? 'scale(1)' : 'scale(0)')};
+      transform: ${props => (props.selected ? 'scale(1)' : 'scale(0)')};
       vertical-align: middle;
       border-radius: 3px;
-      background: ${props => (props.checked ? 'var(--light-tannat)' : '#fff')};
+      background: ${props => (props.selected ? 'var(--light-tannat)' : '#fff')};
     }    
 `

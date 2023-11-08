@@ -6,7 +6,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   handleChange: (value: string ) => void
 }
 
-export const SearchInput = (props: InputProps) => {
+export const InputSearchMenu = (props: InputProps) => {
   return (
     <Container>
       <Input 

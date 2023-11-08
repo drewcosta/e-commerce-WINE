@@ -3,22 +3,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface Props {
-  label: PriceRange,
+  label?: PriceRange,
   checked: boolean,
   onClick?: () => void,
 }
 
 export const InputRadioPriceRange = ({ label, checked, onClick }: Props) => {
   return (
-    <RadioItemList checked={checked} onClick={onClick}>
-      <Span checked={checked} id={label}></Span>
+    <RadioItemList selected={checked} onClick={onClick}>
+      <Span selected={checked} id={label}></Span>
       <label htmlFor={label}>{label}</label>
     </RadioItemList>
   )
 }
 
-interface StylesProps {
-  checked: boolean
+interface StylesProps{
+  selected: boolean
 }
 
 const RadioItemList = styled.li<StylesProps>`
@@ -48,7 +48,7 @@ const RadioItemList = styled.li<StylesProps>`
   }
 
   @media (max-width: 425px){
-      border: ${props => props.checked ? '1px solid var(--light-tannat)' : '1px solid #dedede'};
+      border: ${props => props.selected ? '1px solid var(--light-tannat)' : '1px solid #dedede'};
       border-radius: 5px;
       display: block;
       padding: 10px;
@@ -72,10 +72,10 @@ const Span = styled.span<StylesProps>`
       display: inline-block;
       transition: all .2s;
       transform: scale(0);
-      transform: ${props => (props.checked ? 'scale(1)' : 'scale(0)')};
+      transform: ${props => (props.selected ? 'scale(1)' : 'scale(0)')};
       vertical-align: middle;
       border-radius: 50%;
-      background: ${props => (props.checked ? 'var(--light-tannat)' : '#fff')};
+      background: ${props => (props.selected ? 'var(--light-tannat)' : '#fff')};
     }    
 `
 

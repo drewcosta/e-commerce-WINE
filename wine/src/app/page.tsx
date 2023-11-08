@@ -1,8 +1,8 @@
 'use client'
 import { DefaultPageLayout } from '@/components/DefaultPageLayout'
 import { DefaultProviders } from '@/components/DefaultProviders'
-import { FilterSideBar } from '@/components/FilterSideBar'
-import { ProductsList } from '@/components/Products-list'
+import { FilterSideBar } from '@/components/filters/FilterSideBar'
+import { ProductsList } from '@/components/product/Products-list'
 import styled from 'styled-components'
 
 export default function Home() {
