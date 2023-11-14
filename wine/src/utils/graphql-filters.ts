@@ -22,7 +22,7 @@ export function getPriceRange(priceRange: PriceRange | string) {
   if (priceRange == PriceRange.R60A100) return { price_in_cents_gte: 60, price_in_cents_lte: 100 }
   if (priceRange == PriceRange.R100A200) return { price_in_cents_gte: 100, price_in_cents_lte: 200 }
   if (priceRange == PriceRange.R200A500) return { price_in_cents_gte: 200, price_in_cents_lte: 500 }
-  if (priceRange == PriceRange.R200A500) return { price_in_cents_gte: 500 }
+  if (priceRange == PriceRange.ACIMA500) return { price_in_cents_gte: 500 }
   return ''
 }
 

@@ -15,8 +15,8 @@ export const FilterContext = createContext({
   setSearch: (value: string) => {},
   setCurrentPage: (value: number) => {},
   setPerPage: (value: number) => {},
-  setType: (value: FilterTypes) => {},
-  setPriceRange: (value: PriceRange) => {},
+  setType: (value: string) => {},
+  setPriceRange: (value: string) => {},
 })
 
 interface ProviderProps{
