@@ -18,18 +18,18 @@ export const ProductCard = ({ name, image, price, id }: ProductCardProps) => {
   }
 
   return (
-    <Container>
+    <ProductCardContainer>
       <Card>
         <img className='cardImg' src={image} alt="" onClick={handleNavigate}/>
         <h4 className='cardDescription'>{name}</h4>
         <p className='cardPrice'><strong>Sócio wine</strong>R${price}</p>
       </Card>
       <CartAddButton searchParamsId={id} />
-    </Container>
+    </ProductCardContainer>
   )
 }
 
-const Container = styled.div`
+const ProductCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;

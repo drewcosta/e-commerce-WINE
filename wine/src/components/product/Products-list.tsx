@@ -5,6 +5,7 @@ import { ProductCard } from './Product-card'
 import { useFilter } from '@/hooks/useFilter'
 import { FilterByPriorityPrices } from '../filters/Filter-by-priority-prices'
 import { Pagination } from '../Pagination'
+import { ProductsListTag } from './Products-list-tags'
 
 export const ProductsList = () => {
   const { data, totalCount } = useProducts()
@@ -18,19 +19,19 @@ export const ProductsList = () => {
   }
 
   return (
-    <ContainerProducts>
+    <ProductlistContainer>
       <HeaderProductList>
         <HeaderProductListText>
-          <h3>
             <span>{getCountForType(type)} </span>
             <span>produtos encontrados</span>
-          </h3>
         </HeaderProductListText>
         <FilterByPriorityPrices />
       </HeaderProductList>
 
-      <ContentList>
-        {data?.map((product) =>(
+      <ProductsListTag />
+
+      <ProductlistContent>
+        {data?.map((product) => (
           <ProductCard
             key={product.id}
             name={product.name}
@@ -38,28 +39,28 @@ export const ProductsList = () => {
             price={product.price_in_cents}
             id={product.id}
           />
-        ))}
-      </ContentList>
+          ))}
+      </ProductlistContent>
 
       <FooterProductList>
         <Pagination />
       </FooterProductList>
       
-    </ContainerProducts>
+    </ProductlistContainer>
   )
 }
 
-const ContainerProducts = styled.div`
+const ProductlistContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 50rem;
 
   @media (max-width: 1024px) {
-    align-items: center;
+    /* align-items: center; */
     width: 100%;
   }
 `
-const ContentList = styled.div`
+const ProductlistContent = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -72,15 +73,14 @@ const HeaderProductList = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
   width: 100%;
 
   border-bottom: 1px solid #b6b3b3e6;
   padding-bottom: 15px;
 `
 
-const HeaderProductListText = styled.div`
-  h3 > span:nth-child(2){
+const HeaderProductListText = styled.h3`
+  > span:nth-child(2){
     font-weight: normal;  
     font-size: 15px;
     color: var(--gray-default);
