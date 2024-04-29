@@ -8,6 +8,7 @@ export const DefaultTheme = {
     greenMiddle: '#7EBC43',
     pink: '#B6116E',
     whiteBasic: '#FFFFFF',
+    whiteAlmostGrey: '#EAEAEA',
   },
   backgroundColors: {
     backgroundApp: '#F5F5F5',
