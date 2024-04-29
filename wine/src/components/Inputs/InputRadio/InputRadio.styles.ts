@@ -11,7 +11,7 @@ export const Container = styled.div<InputRadioStyles>`
 
   label{
     font-size: ${({ theme }) => theme.fontSizes.text_sm};
-    color: ${({ theme }) => theme.color.black};
+    color: ${({ theme }) => theme.colors.black};
     text-transform: capitalize;
     cursor: pointer;
   }
@@ -19,17 +19,17 @@ export const Container = styled.div<InputRadioStyles>`
   &:hover > span::before {
     transition: all 0.2s;
     transform: scale(1);
-    background: ${({ theme }) => theme.color.pink};
+    background: ${({ theme }) => theme.colors.pink};
     opacity: .5;
   }
 
   &:hover > label {
-    color: ${({ theme }) => theme.color.pink};
+    color: ${({ theme }) => theme.colors.pink};
   }
 
   @media (max-width: 425px){
       border: 1px solid;
-      border-color: ${({ theme, $checked }) => $checked ? theme.color.pink : theme.color.whiteAlmostGrey};
+      border-color: ${({ theme, $checked }) => $checked ? theme.colors.pink : theme.colors.whiteAlmostGrey};
       border-radius: 5px;
       display: block;
       padding: 10px;
@@ -43,7 +43,7 @@ export const Radio = styled.span<InputRadioStyles>`
       display: inline-block;
       border: 1px solid #ccc;
       border-radius: 3px;
-      background: ${theme.color.whiteBasic};
+      background: ${theme.colors.whiteBasic};
       line-height: 0;
       padding: 2px;
       margin-right: 5px;
@@ -58,7 +58,7 @@ export const Radio = styled.span<InputRadioStyles>`
         transform: ${$checked ? 'scale(1)' : 'scale(0)'};
         vertical-align: middle;
         border-radius: 3px;
-        background: ${$checked ? theme.color.pink : theme.color.whiteBasic};
+        background: ${$checked ? theme.colors.pink : theme.colors.whiteBasic};
       }
     `
   }

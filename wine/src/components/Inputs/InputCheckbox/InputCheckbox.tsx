@@ -1,7 +1,7 @@
 import * as S from './InputCheckbox.styles'
 import { InputCheckboxProps } from './InputCheckbox.interfaces'
 
-export const InputCheckboxType = ({ label, ...props }: InputCheckboxProps) => {
+export const InputCheckbox = ({ label, ...props }: InputCheckboxProps) => {
   return (
     <S.Container>
       <S.Checkbox {...props} id={label} ></S.Checkbox>
