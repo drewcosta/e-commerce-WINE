@@ -42,7 +42,7 @@ export const Radio = styled.span<InputRadioStyles>`
     $filterByPriceRange && css`
       display: inline-block;
       border: 1px solid #ccc;
-      border-radius: 3px;
+      border-radius: 50%;
       background: ${theme.colors.whiteBasic};
       line-height: 0;
       padding: 2px;
@@ -57,7 +57,7 @@ export const Radio = styled.span<InputRadioStyles>`
         transform: scale(0);
         transform: ${$checked ? 'scale(1)' : 'scale(0)'};
         vertical-align: middle;
-        border-radius: 3px;
+        border-radius: 50%;
         background: ${$checked ? theme.colors.pink : theme.colors.whiteBasic};
       }
     `
