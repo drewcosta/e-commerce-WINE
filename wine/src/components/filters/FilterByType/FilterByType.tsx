@@ -1,5 +1,5 @@
 import * as S from './FilterByType.styles';
-import { FilterTypes } from '@/types/filter-types';
+import { FilterTypes } from '@/types/FilterTypes.enum';
 import { useFilter } from '@/hooks/useFilter';
 import { InputCheckbox } from '@/components/Inputs';
 

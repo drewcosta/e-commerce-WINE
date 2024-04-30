@@ -1,7 +1,7 @@
 import * as S from './FilterByPriorityPrices.styles'
 import { Button } from '@/components/Button'
 import { useFilter } from '@/hooks/useFilter'
-import { PriorityPrices } from '@/types/priority-prices'
+import { PriorityPrices } from '@/types/PriorityPrices.enum'
 
 export const FilterByPriorityPrices = () => {
   const { priority, setPriority } = useFilter()

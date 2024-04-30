@@ -1,8 +1,8 @@
 'use client'
 import { ReactNode, createContext, useState } from 'react'
-import { PriorityPrices } from '@/types/priority-prices'
-import { FilterTypes } from '@/types/filter-types'
-import { PriceRange } from '@/types/price-range'
+import { PriorityPrices } from '@/types/PriorityPrices.enum'
+import { FilterTypes } from '@/types/FilterTypes.enum'
+import { PriceRange } from '@/types/PriceRange.enum'
 
 export const FilterContext = createContext({
   search: '',

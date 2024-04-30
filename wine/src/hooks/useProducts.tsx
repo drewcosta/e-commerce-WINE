@@ -1,4 +1,4 @@
-import { ProductsFetchResponse } from "@/types/products-fetch-response";
+import { ProductsFetchResponse } from "@/types/ProductsFetchResponse.interfaces";
 import { useQuery } from "@tanstack/react-query";
 import axios, { AxiosPromise } from "axios";
 import { useFilter } from "./useFilter";

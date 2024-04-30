@@ -1,6 +1,6 @@
 import * as S from './FilterByPriceRange.styles'
 import { useFilter } from "@/hooks/useFilter"
-import { PriceRange } from "@/types/price-range"
+import { PriceRange } from "@/types/PriceRange.enum"
 import { InputRadio } from '@/components/Inputs';
 
 export const FilterByPriceRange = () => {

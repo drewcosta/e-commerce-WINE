@@ -1,4 +1,4 @@
-import { Product } from "./product"
+import { Product } from "./Product.interfaces";
 
 export interface ListMetaData{
   count: number
