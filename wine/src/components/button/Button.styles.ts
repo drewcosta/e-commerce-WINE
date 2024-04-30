@@ -23,7 +23,7 @@ export const Button = styled.button<ButtonStyles>`
     `
   }
 
-${({ $filterByPriorityPrice, $selected, theme }) =>
+  ${({ $filterByPriorityPrice, $selected, theme }) =>
     $filterByPriorityPrice && css`
       color: ${$selected ? theme.colors.whiteBasic : theme.colors.pink};
       background-color: ${$selected ? theme.colors.pink : 'none'};
@@ -45,6 +45,27 @@ ${({ $filterByPriorityPrice, $selected, theme }) =>
       & + button {
         border-left: 1px solid ${theme.colors.pink};
       }
+    `
+  }
+
+  ${({ $backButton }) =>
+    $backButton && css`
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+
+      color: ${({ theme }) => theme.colors.greyDark};
+      font-weight: 500;
+      font-size: 1.25rem;
+      line-height: 120%;
+      
+      cursor: pointer;
+      height: 1.5rem;
+      width: 1.5rem;
     `
   }
 `
