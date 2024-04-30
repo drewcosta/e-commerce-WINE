@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { FilterSideBar } from '../filters/FilterSideBar'
 import { AnimationSidebarResponsive } from '../animations/AnimationSidebarResponsive'
+import { FilterSideBar } from '../FilterSideBar'
 
 
 export const FooterFilter = () => {
-  const [filterBar, setFilterBar] = useState(false)
+  const [showFilterBar, setShowFilterBar] = useState(false)
 
-  const showFilterBar = () => setFilterBar(!filterBar)
+  const openFilterBar = () => setShowFilterBar(!showFilterBar)
 
   function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -17,10 +17,10 @@ export const FooterFilter = () => {
     <Container>
       <ul>
         <li onClick={scrollToTop}>Topo</li>
-        <li onClick={showFilterBar}>Filtrar</li>
-        {filterBar && 
+        <li onClick={openFilterBar}>Filtrar</li>
+        {showFilterBar && 
           <AnimationSidebarResponsive>
-            <FilterSideBar show={filterBar} />
+            <FilterSideBar showOnMobile={showFilterBar} />
           </AnimationSidebarResponsive>
         }
       </ul>

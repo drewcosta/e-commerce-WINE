@@ -1,26 +1,23 @@
 import styled from "styled-components";
 
-export const ContainerAdvancedSearch = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 1rem;
-
-  @media (max-width: 768px){
-    width: 100%;
-  }
+  width: 100%;
 `
 
-export const AdvancedSearchTitle = styled.h3`
-  font-size: 1.2rem;
+export const Title = styled.h3`
+  color: ${({ theme }) => theme.colors.greyDark};
+  font-size: ${({ theme }) => theme.fontSizes.text_lg};
   line-height: normal;
-  color: #333333;
   font-weight: 500;
   text-transform: capitalize;
-  margin-bottom: 1rem;  
+  margin-bottom: 1rem;
 `
 
-export const AdvancedSearchList = styled.ul`
+export const BoxPrices = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
