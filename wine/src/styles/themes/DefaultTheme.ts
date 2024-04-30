@@ -5,13 +5,15 @@ export const DefaultTheme = {
     grey: '#888888',
     greyStronger: '#555555',
     greyDark: '#333333',
-    greenMiddle: '#7EBC43',
+    greenSuccess: '#7EBC43',
+    turquoise: '#4FBFA5',
     pink: '#B6116E',
     whiteBasic: '#FFFFFF',
     whiteAlmostGrey: '#EAEAEA',
   },
   backgroundColors: {
     backgroundApp: '#F5F5F5',
+    backgroundLogo: '#F6B554'
   },
   fontSizes: {
     text_sm: '14px',
