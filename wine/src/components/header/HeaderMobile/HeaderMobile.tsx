@@ -1,6 +1,6 @@
 import * as S from './HeaderMobile.styles';
 import { useState } from "react";
-import { AnimationSidebarResponsive } from "@/components/animations/AnimationSidebarResponsive";
+import { AnimationSidebarResponsive } from "@/components/Animations/AnimationSidebarResponsive";
 import { Navbar } from "../components/Navbar";
 import { Search } from "../components/Search";
 import { Store } from "../components/Store";

@@ -1,6 +1,6 @@
-import { FilterTypes } from "@/types/filter-types";
-import { PriorityPrices } from "@/types/priority-prices";
-import { PriceRange } from "@/types/price-range";
+import { FilterTypes } from "@/types/FilterTypes.enum";
+import { PriorityPrices } from "@/types/PriorityPrices.enum";
+import { PriceRange } from "@/types/PriceRange.enum";
 
 export function getCategoryByType(type: FilterTypes | string) {
   if (type == FilterTypes.BRANCO) return 'branco'

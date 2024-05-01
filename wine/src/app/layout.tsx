@@ -1,8 +1,7 @@
-import './globals.css'
 import { Lato } from 'next/font/google'
-import { DefaultProviders } from '@/components/DefaultProviders'
 import { Header } from '@/components/header/Header'
-import { Footer } from '@/components/footer/Footer'
+import { Footer } from '@/components/Footer/Footer'
+import { DefaultProviders } from '@/components/Providers/DefaultProviders'
 
 const lato = Lato({
   weight: ['300', '400', '700'],
@@ -26,7 +25,7 @@ export default function RootLayout({
           <Header />
           {children}
           <Footer />
-        </DefaultProviders>    
+        </DefaultProviders>
       </body>
     </html>
   )

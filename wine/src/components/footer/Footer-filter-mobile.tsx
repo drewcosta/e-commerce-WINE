@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { AnimationSidebarResponsive } from '../animations/AnimationSidebarResponsive'
+import { AnimationSidebarResponsive } from '../Animations/AnimationSidebarResponsive'
 import { FilterSideBar } from '../FilterSideBar'
 
 
