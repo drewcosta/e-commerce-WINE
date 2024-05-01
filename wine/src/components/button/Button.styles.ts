@@ -2,19 +2,19 @@ import styled, { css } from "styled-components";
 import { ButtonStyles } from "./Button.interfaces";
 
 export const Button = styled.button<ButtonStyles>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   ${({ $addButton }) =>
     $addButton && css`
-      display: flex;
-      justify-content: center;
-      align-items: center;
       padding: 0.7rem 1.4rem;
-      width: auto;
+      width: 100%;
       color: ${({ theme }) => theme.colors.whiteBasic};
       background: ${({ theme }) => theme.colors.greenSuccess};
       font-size: ${({ theme }) => theme.fontSizes.text_sm};
       font-weight: 700;
       line-height: 0.97338rem;
-      text-transform: uppercase;
       
       border: none;
       border-radius: 0.24338rem;
@@ -50,9 +50,6 @@ export const Button = styled.button<ButtonStyles>`
 
   ${({ $backButton }) =>
     $backButton && css`
-      display: flex;
-      align-items: center;
-      justify-content: center;
       gap: 8px;
       background: transparent;
       border: none;
