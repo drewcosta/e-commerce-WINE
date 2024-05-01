@@ -3,35 +3,17 @@ import { useRouter } from 'next/navigation';
 import { useProduct } from '@/hooks/useProduct';
 import { ProductCardProps } from './ProductCard.interfaces';
 import { Button } from '@/components/Button';
-import Image from 'next/image';
+import { addToCart } from '@/functions/AddToCart';
 
 export const ProductCard = ({ product }: ProductCardProps) => {
-  const { data } = useProduct(product.id);
-
   const router = useRouter();
 
   const handleNavigate = () => {
     router.push("/product?id=" + product.id)
   }
 
-  const handleAddToCart = () => {
-    let cartItems = localStorage.getItem('cart-items');
-    if (cartItems) {
-      let cartItemsArray = JSON.parse(cartItems);
-
-      let existingProductIndex = cartItemsArray.findIndex((item: { id: string; }) => item.id === product.id);
-
-      if (existingProductIndex != -1) {
-        cartItemsArray[existingProductIndex].quantity += 1;
-      } else {
-        cartItemsArray.push({ ...data, quantity: 1, id: product.id })
-      }
-
-      localStorage.setItem('cart-items', JSON.stringify(cartItemsArray));
-    } else {
-      const newCart = [{ ...data, quantity: 1, id: product.id }]
-      localStorage.setItem('cart-items', JSON.stringify(newCart));
-    }
+  function handleAddToCart() {
+    addToCart(product);
   }
 
   return (
@@ -45,7 +27,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         onClick={handleAddToCart}
         $addButton
       >
-        Adicionar 
+        Adicionar
       </Button>
     </S.Container>
   )
