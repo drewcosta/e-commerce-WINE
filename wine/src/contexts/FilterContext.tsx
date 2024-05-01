@@ -1,29 +1,15 @@
-'use client'
+"use client"
 import { ReactNode, createContext, useState } from 'react'
 import { PriorityPrices } from '@/types/PriorityPrices.enum'
-import { FilterTypes } from '@/types/FilterTypes.enum'
-import { PriceRange } from '@/types/PriceRange.enum'
+import { IFilterContext } from '@/types/FilterContext.interface'
 
-export const FilterContext = createContext({
-  search: '',
-  currentPage: 0,
-  perPage: 0,
-  type: '',
-  priority: '',
-  priceRange:'',
-  setPriority: (value: PriorityPrices) => {},
-  setSearch: (value: string) => {},
-  setCurrentPage: (value: number) => {},
-  setPerPage: (value: number) => {},
-  setType: (value: string) => {},
-  setPriceRange: (value: string) => {},
-})
+export const FilterContext = createContext({} as IFilterContext);
 
-interface ProviderProps{
+interface ProviderProps {
   children: ReactNode
 }
 
-export const FilterContextProvider = ({children}: ProviderProps) => {
+export const FilterContextProvider = ({ children }: ProviderProps) => {
   const [search, setSearch] = useState('')
   const [currentPage, setCurrentPage] = useState(0)
   const [perPage, setPerPage] = useState(10)
@@ -32,7 +18,7 @@ export const FilterContextProvider = ({children}: ProviderProps) => {
   const [priceRange, setPriceRange] = useState('')
 
   return (
-    <FilterContext.Provider 
+    <FilterContext.Provider
       value={{
         search,
         currentPage,
