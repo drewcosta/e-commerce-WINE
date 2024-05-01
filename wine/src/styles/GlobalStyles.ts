@@ -11,9 +11,12 @@ export const GlobalStyle = createGlobalStyle`
   body {
     max-width: 100vw;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Lato", sans-serif;
   }
 
   button, input, textarea {
     -webkit-font-smoothing: antialiased;
+    font-family: "Lato", sans-serif;
   }
 `

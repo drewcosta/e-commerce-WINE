@@ -23,7 +23,7 @@ export const DefaultTheme = {
     text_6xl: '60px',
   },
   breakpoints: {
-    Mobile: '425px',
+    mobile: '425px',
     tablets: '768px',
   },
 };
