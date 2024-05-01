@@ -22,7 +22,7 @@ export const Container = styled.aside<FilterSideBarStyles>`
     }
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.Mobile}){
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}){
     display: ${({ showOnMobile }) => showOnMobile ? 'flex' : 'none'};
     width: 100%;
     padding: 10px;

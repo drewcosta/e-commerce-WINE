@@ -5,7 +5,7 @@ import { FilterByPriceRange, FilterByType } from '../Filters';
 export const FilterSideBar = ({ showOnMobile }: FilterSideBarProps) => {
   return (
     <S.Container showOnMobile={showOnMobile}>
-      <h1>Refine sua busca</h1>
+      <h2>Refine sua busca</h2>
       <FilterByType />
       <FilterByPriceRange />
     </S.Container>
