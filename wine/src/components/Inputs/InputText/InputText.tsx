@@ -3,7 +3,7 @@ import { InputTextProps } from "./InputText.interfaces"
 
 export const InputText = ({ ...props }: InputTextProps) => {
   return (
-    <S.Container>
+    <S.Container {...props}>
       <S.InputText {...props} />
     </S.Container>
   )
